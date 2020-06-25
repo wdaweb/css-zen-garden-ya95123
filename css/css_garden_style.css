@@ -11,7 +11,8 @@
 * {
   margin: 0;
   padding: 0;
-  /* font-family: sans-serif; */
+  list-style: none;
+  /* font-family: 'Dancing Script', cursive;; */
 }
 
 html,body{
@@ -23,34 +24,78 @@ body{
   height: 100vh;
   background: #000;
   overflow: hidden;
+  transition: 0.5s;
 
   /* 3D */
   transform-style: preserve-3d;
   perspective: 1000px;
 }
 
+a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+a:hover{
+  color: #ddd !important;
+}
+
+p{
+  font-size: 1.6rem;
+  /* font-weight: 600; */
+}
+
+p:nth-child(odd){
+  color: rgb(26, 94, 241);
+}
+
+p:nth-child(even){
+  color: rgb(255, 59, 24);
+}
+
+abbr{
+  color: rgb(16, 161, 52);
+}
+
+h3{
+  color: #ddd;
+  font-size: 2.2rem;
+}
+
+/* 置中 */
+#zen-summary,#zen-preamble,#zen-explanation,#zen-participation,#zen-benefits,#zen-requirements,#contentinfo,#design-selection,#design-archives,#zen-resources{
+  font-family: 'Dancing Script', cursive;
+  width: 500px;
+  position: absolute;
+  /* z-index: 1; */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  display: none;
+}
+
 /* 火圈 */
 .extra1{
-  width: 750px;
-  height: 750px;
+  width: 800px;
+  height: 800px;
   position: absolute;
-  z-index: 1;
+  z-index: -1;
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
   background: url(../images/ring.svg) no-repeat;
   transition: 0.6s;
+  animation: color-change infinite 16s;
+  opacity: 0.96;
 }
 
 .extra1:active{
   transform: translate(-50%,-50%) rotateY(270deg);
 }
 
-#page-wrapper{
-  /* display: none; */
-}
 
-/* *zen-intro */
+/* !zen-intro */
 /* 標題 */
 #zen-intro #banner{
   font-family: Papyrus !important;
@@ -59,11 +104,11 @@ body{
   position: absolute;
   left: calc(256px / 2);
   top: calc(256px / 2 - 42px);
-  /* text-shadow: 2px 2px 3px rgba(255, 82, 59, 0.842); */
   filter: drop-shadow(3px 3px 3px rgba(255, 82, 59, 0.842));
   transition: 0.5s;
 }
 
+/* TODO 到時候JS 改點擊的時候+180度 */
 #zen-intro #banner:hover{
   filter: drop-shadow(3px 3px 3px rgba(113, 233, 97, 0.842));
 }
@@ -79,6 +124,111 @@ body{
   top: calc(-256px / 2 + 42px);
   z-index: -1;
   background: url(../images/logo-gray.svg);
-  /* filter: drop-shadow(3px 3px 3px rgba(113, 233, 97, 0.842)); */
 }
 
+/* *zen-summary------------------------------------------ */
+#zen-summary{
+  display: block;
+  font-size: 1.6rem;
+  display: block;
+  display: none;
+}
+
+/* *zen-preamble----------------------------------------- */
+#zen-preamble{
+  width: 500px;
+  /* height: 500px; */
+  /* background: #333; */
+  border-radius: 50%;
+  display: none;
+}
+
+/* !zen-supporting */
+/* TODO *zen-explanation(過長分兩段1,1)-------------------------- */
+#zen-explanation{
+  display: none;
+}
+
+/* TODO *zen-participation(過長分兩段2,1)------------------------ */
+#zen-participation{
+  display: none;
+}
+
+/* *zen-benefits------------------------------------------ */
+#zen-benefits{
+  display: none;
+}
+
+/* TODO *zen-requirements(過長分兩段2,2,1)-------------------------------------- */
+#zen-requirements{
+  display: none;
+}
+
+/* !sidebar */
+/* *design-selection-------------------------------------- */
+#design-selection{
+  display: none;
+}
+
+#design-selection nav{
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+
+#design-selection a:nth-child(odd){
+  color: rgb(255, 59, 24);
+}
+
+#design-selection a:nth-child(even){
+  color: rgb(26, 94, 241);
+}
+
+/* *design-archives-------------------------------------- */
+#design-archives{
+  display: none;
+}
+
+#design-archives ul{
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+}
+
+#design-archives span{
+  color: #ddd;
+}
+
+#design-archives a:last-child{
+  margin-left: 0.3rem;
+  color: rgb(26, 94, 241);
+}
+
+/* *zen-resources-------------------------------------- */
+#zen-resources{
+  display: block;
+}
+
+#zen-resources ul{
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+
+#zen-resources li{
+  margin-bottom: 0.5rem;
+}
+
+#zen-resources a{
+  margin-left: 0.3rem;
+  color: rgb(255, 59, 24);
+}
+
+/* *動畫-------------------------------------------------- */
+@keyframes color-change{
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}
