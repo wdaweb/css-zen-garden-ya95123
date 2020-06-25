@@ -25,6 +25,7 @@ body{
   background: #000;
   overflow: hidden;
   transition: 0.5s;
+  /* font-family: 'Dancing Script', cursive; */
 
   /* 3D */
   transform-style: preserve-3d;
@@ -75,7 +76,8 @@ h3{
   display: none;
 }
 
-/* 火圈 */
+/* !火圈 */
+/* TODO 到時候JS 改點擊的時候+180度 */
 .extra1{
   width: 800px;
   height: 800px;
@@ -94,13 +96,70 @@ h3{
   transform: translate(-50%,-50%) rotateY(270deg);
 }
 
+/* !火圈兩側按鈕-右側 */
+.extra2{
+  width: 70px;
+  height: 70px;
+  left: calc(50% + 400px);
+  top: calc(50%);
+  transform: translate(-50%,-50%);
+  position: relative;
+  opacity: 0;
+  transition: 0.3s;
+  /* background: #ccc; */
+}
+
+.extra2::before{
+  content: '→';
+  display: block;
+  color: rgba(189, 255, 252, 0.8);
+  font-size: 7rem;
+  font-weight: 800;
+  font-family: 'Dancing Script', cursive;
+
+  position: absolute;
+  left: -4px;
+  top: -35px;  
+}
+
+/* !火圈兩側按鈕-左側 */
+.extra3{
+  width: 70px;
+  height: 70px;
+  left: calc(50% - 400px);
+  top: calc(41%);
+  transform: translate(-50%,-50%);
+  position: relative;
+  opacity: 0;
+  transition: 0.3s;
+  /* background: #ccc; */
+}
+
+.extra3::after{
+  content: '←';
+  display: block;
+  color: rgba(255, 130, 121, 0.8);
+  font-size: 7rem;
+  font-weight: 800;
+  font-family: 'Dancing Script', cursive;
+
+  position: absolute;
+  left: -35px;
+  top: -35px;  
+}
+
+.extra2:hover,.extra3:hover{
+  opacity: 1;
+  cursor: pointer;
+}
 
 /* !zen-intro */
 /* 標題 */
 #zen-intro #banner{
-  font-family: Papyrus !important;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  font-weight: 650;
   color: white;
-  font-weight: 700;
   position: absolute;
   left: calc(256px / 2);
   top: calc(256px / 2 - 42px);
@@ -108,7 +167,6 @@ h3{
   transition: 0.5s;
 }
 
-/* TODO 到時候JS 改點擊的時候+180度 */
 #zen-intro #banner:hover{
   filter: drop-shadow(3px 3px 3px rgba(113, 233, 97, 0.842));
 }
@@ -128,10 +186,8 @@ h3{
 
 /* *zen-summary------------------------------------------ */
 #zen-summary{
-  display: block;
   font-size: 1.6rem;
   display: block;
-  display: none;
 }
 
 /* *zen-preamble----------------------------------------- */
@@ -206,7 +262,7 @@ h3{
 
 /* *zen-resources-------------------------------------- */
 #zen-resources{
-  display: block;
+  display: none;
 }
 
 #zen-resources ul{
@@ -221,6 +277,13 @@ h3{
 #zen-resources a{
   margin-left: 0.3rem;
   color: rgb(255, 59, 24);
+}
+
+/* *footer----------------------------------------------- */
+#footer{
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
 }
 
 /* *動畫-------------------------------------------------- */
