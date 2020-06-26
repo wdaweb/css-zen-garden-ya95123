@@ -393,11 +393,8 @@
 
       // 點擊右鍵
       $(".extra2").click(function () {
-        content++;
-        console.log(content);
-        turn();
-        // 轉圈
-        if (content >= 13 || content <= 0) {
+        // 轉圈 ( 0-12 可轉動)
+        if (content >= 13 || content < 0) {
           circle += 0;
         } else {
           circle += 180;
@@ -405,22 +402,27 @@
         }
         console.log(circle);
         $(".extra1").css("transform", `translate(-50%,-50%) rotateY(${circle}deg)`);
+        // 內容變換
+        content++;
+        console.log(content);
+        turn();
       })
 
       // 點擊左鍵
       $(".extra3").click(function () {
-        content--;
-        console.log(content);
-        turn();
-        // 轉圈
-        if (content >= 13 || content <= 0) {
+        // 轉圈 (1-13 可轉動)
+        if (content > 13 || content <= 0) {
           circle += 0;
         } else {
           circle -= 180;
-          console.log('往左轉');
+          // console.log('往左轉');
         }
         console.log(circle);
         $(".extra1").css("transform", `translate(-50%,-50%) rotateY(${circle}deg)`);
+        // 內容變換
+        content--;
+        console.log(content);
+        turn();
       })
 
       // 點擊小恐龍 切背景
