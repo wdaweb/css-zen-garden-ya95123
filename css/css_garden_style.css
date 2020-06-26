@@ -92,10 +92,6 @@ h3{
   opacity: 0.96;
 }
 
-.extra1:active{
-  transform: translate(-50%,-50%) rotateY(270deg);
-}
-
 /* !火圈兩側按鈕-右側 */
 .extra2{
   width: 70px;
@@ -184,13 +180,13 @@ h3{
   background: url(../images/logo-gray.svg);
 }
 
-/* *zen-summary------------------------------------------ */
+/* *zen-summary(0)------------------------------------------ */
 #zen-summary{
   font-size: 1.6rem;
   display: block;
 }
 
-/* *zen-preamble----------------------------------------- */
+/* *zen-preamble(1)----------------------------------------- */
 #zen-preamble{
   width: 500px;
   /* height: 500px; */
@@ -200,28 +196,28 @@ h3{
 }
 
 /* !zen-supporting */
-/* TODO *zen-explanation(過長分兩段1,1)-------------------------- */
+/* TODO *zen-explanation(過長分兩段1,1) (2,3)-------------------------- */
 #zen-explanation{
   display: none;
 }
 
-/* TODO *zen-participation(過長分兩段2,1)------------------------ */
+/* TODO *zen-participation(過長分兩段2,1) (4,5)------------------------ */
 #zen-participation{
   display: none;
 }
 
-/* *zen-benefits------------------------------------------ */
+/* *zen-benefits(6)------------------------------------------ */
 #zen-benefits{
   display: none;
 }
 
-/* TODO *zen-requirements(過長分兩段2,2,1)-------------------------------------- */
+/* TODO *zen-requirements(過長分兩段1,1,2,1) (7,8,9,10)-------------------------------------- */
 #zen-requirements{
   display: none;
 }
 
 /* !sidebar */
-/* *design-selection-------------------------------------- */
+/* *design-selection (11)-------------------------------------- */
 #design-selection{
   display: none;
 }
@@ -239,7 +235,7 @@ h3{
   color: rgb(26, 94, 241);
 }
 
-/* *design-archives-------------------------------------- */
+/* *design-archives (12)-------------------------------------- */
 #design-archives{
   display: none;
 }
@@ -260,7 +256,7 @@ h3{
   color: rgb(26, 94, 241);
 }
 
-/* *zen-resources-------------------------------------- */
+/* *zen-resources (13)-------------------------------------- */
 #zen-resources{
   display: none;
 }

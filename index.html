@@ -272,14 +272,133 @@
     </aside>
   </div>
 
+  <!-- 火圈 -->
   <div class="extra1" role="presentation"></div>
+  <!-- 右鍵 -->
   <div class="extra2" role="presentation"></div>
+  <!-- 左鍵 -->
   <div class="extra3" role="presentation"></div>
   <div class="extra4" role="presentation"></div>
   <div class="extra5" role="presentation"></div>
   <div class="extra6" role="presentation"></div>
 
+  <script src="./js/jquery-3.5.1.min.js"></script>
   <script>
+    $(function () {
+      // 轉的變數 往右+1 往左-1 起始為0 末為
+      let content = 0;
+      // 火圈角度
+      let circle = 0;
+      // 火圈被點擊效果變數
+      let temp = 0;
+      // 往右
+      const turn = () => {
+        if (content == 1) {
+          // #zen-preamble
+          $("#zen-summary,#zen-explanation,#zen-participation,#zen-benefits,#zen-requirements,#contentinfo,#design-selection,#design-archives,#zen-resources").css("display", "none");
+          $("#zen-preamble").css("display", "block");
+        } else if (content == 2) {
+          // #zen-explanation 1
+          $("#zen-summary,#zen-preamble,#zen-participation,#zen-benefits,#zen-requirements,#contentinfo,#design-selection,#design-archives,#zen-resources").css("display", "none");
+          $("#zen-explanation").css("display", "block");
+          $("#zen-explanation p").eq(0).css("display", "block");
+          $("#zen-explanation p").eq(1).css("display", "none");
+        } else if (content == 3) {
+          // #zen-explanation 2
+          $("#zen-summary,#zen-preamble,#zen-participation,#zen-benefits,#zen-requirements,#contentinfo,#design-selection,#design-archives,#zen-resources").css("display", "none");
+          $("#zen-explanation").css("display", "block");
+          $("#zen-explanation p").eq(0).css("display", "none");
+          $("#zen-explanation p").eq(1).css("display", "block");
+        } else if (content == 4) {
+          // #zen-participation 1
+          $("#zen-summary,#zen-preamble,#zen-explanation,#zen-benefits,#zen-requirements,#contentinfo,#design-selection,#design-archives,#zen-resources").css("display", "none");
+          $("#zen-participation").css("display", "block");
+          $("#zen-participation p").eq(0).css("display", "block");
+          $("#zen-participation p").eq(1).css("display", "block");
+          $("#zen-participation p").eq(2).css("display", "none");
+        } else if (content == 5) {
+          // #zen-participation 2
+          $("#zen-summary,#zen-preamble,#zen-explanation,#zen-benefits,#zen-requirements,#contentinfo,#design-selection,#design-archives,#zen-resources").css("display", "none");
+          $("#zen-participation").css("display", "block");
+          $("#zen-participation p").eq(0).css("display", "none");
+          $("#zen-participation p").eq(1).css("display", "none");
+          $("#zen-participation p").eq(2).css("display", "block");
+        } else if (content == 6) {
+          // #zen-benefits
+          $("#zen-summary,#zen-preamble,#zen-explanation,#zen-participation,#zen-requirements,#contentinfo,#design-selection,#design-archives,#zen-resources").css("display", "none");
+          $("#zen-benefits").css("display", "block");
+        } else if (content == 7) {
+          // #zen-requirements 1
+          $("#zen-summary,#zen-preamble,#zen-explanation,#zen-participation,#zen-benefits,#contentinfo,#design-selection,#design-archives,#zen-resources").css("display", "none");
+          $("#zen-requirements").css("display", "block");
+          $("#zen-requirements p").eq(0).siblings().css("display", "none");
+          $("#zen-requirements p").eq(0).css("display", "block");
+          $("#zen-requirements h3").css("display", "block");
+        } else if (content == 8) {
+          // #zen-requirements 2
+          $("#zen-summary,#zen-preamble,#zen-explanation,#zen-participation,#zen-benefits,#contentinfo,#design-selection,#design-archives,#zen-resources").css("display", "none");
+          $("#zen-requirements").css("display", "block");
+          $("#zen-requirements p").eq(1).siblings().css("display", "none");
+          $("#zen-requirements p").eq(1).css("display", "block");
+          $("#zen-requirements h3").css("display", "block");
+        } else if (content == 9) {
+          // #zen-requirements 3
+          $("#zen-summary,#zen-preamble,#zen-explanation,#zen-participation,#zen-benefits,#contentinfo,#design-selection,#design-archives,#zen-resources").css("display", "none");
+          $("#zen-requirements").css("display", "block");
+          $("#zen-requirements p").eq(0).css("display", "none");
+          $("#zen-requirements p").eq(1).css("display", "none");
+          $("#zen-requirements p").eq(2).css("display", "block");
+          $("#zen-requirements p").eq(3).css("display", "block");
+          $("#zen-requirements p").eq(4).css("display", "none");
+        } else if (content == 10) {
+          // #zen-requirements 4
+          $("#zen-summary,#zen-preamble,#zen-explanation,#zen-participation,#zen-benefits,#contentinfo,#design-selection,#design-archives,#zen-resources").css("display", "none");
+          $("#zen-requirements").css("display", "block");
+          $("#zen-requirements p").eq(4).siblings().css("display", "none");
+          $("#zen-requirements p").eq(4).css("display", "block");
+          $("#zen-requirements h3").css("display", "block");
+        } else if (content == 11) {
+          // #design-selection
+          $("#zen-summary,#zen-preamble,#zen-explanation,#zen-participation,#zen-benefits,#zen-requirements,#contentinfo,#design-archives,#zen-resources").css("display", "none");
+          $("#design-selection").css("display", "block");
+        } else if (content == 12) {
+          // #design-archives
+          $("#zen-summary,#zen-preamble,#zen-explanation,#zen-participation,#zen-benefits,#zen-requirements,#contentinfo,#design-selection,#zen-resources").css("display", "none");
+          $("#design-archives").css("display", "block");
+        } else if (content >= 13) {
+          // #zen-resources
+          $("#zen-summary,#zen-preamble,#zen-explanation,#zen-participation,#zen-benefits,#zen-requirements,#contentinfo,#design-selection,#design-archives").css("display", "none");
+          $("#zen-resources").css("display", "block");
+          content = 13;
+        } else if (content <= 0) {
+          // #zen-summary
+          $("#zen-preamble,#zen-explanation,#zen-participation,#zen-benefits,#zen-requirements,#contentinfo,#design-selection,#design-archives,#zen-resources").css("display", "none");
+          $("#zen-summary").css("display", "block");
+          content = 0;
+        }
+      }
+
+      // 點擊右鍵
+      $(".extra2").click(function () {
+        content++;
+        console.log(content);
+        turn();
+        circle += 180;
+        console.log(circle);
+        $(".extra1").css("transform", `translate(-50%,-50%) rotateY(${circle}deg)`);
+      })
+
+      // 點擊左鍵
+      $(".extra3").click(function () {
+        content--;
+        console.log(content);
+        turn();
+        circle -= 180;
+        console.log(circle);
+        $(".extra1").css("transform", `translate(-50%,-50%) rotateY(${circle}deg)`);
+      })
+
+    })
 
   </script>
 </body>
