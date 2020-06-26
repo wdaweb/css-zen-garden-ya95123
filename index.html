@@ -401,6 +401,7 @@
           circle += 0;
         } else {
           circle += 180;
+          console.log('往右轉');
         }
         console.log(circle);
         $(".extra1").css("transform", `translate(-50%,-50%) rotateY(${circle}deg)`);
@@ -416,6 +417,7 @@
           circle += 0;
         } else {
           circle -= 180;
+          console.log('往左轉');
         }
         console.log(circle);
         $(".extra1").css("transform", `translate(-50%,-50%) rotateY(${circle}deg)`);
