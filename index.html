@@ -289,9 +289,7 @@
       let content = 0;
       // 火圈角度
       let circle = 0;
-      // 火圈被點擊效果變數
-      let temp = 0;
-      // 往右
+      // 左右 function
       const turn = () => {
         if (content == 1) {
           // #zen-preamble
@@ -383,7 +381,12 @@
         content++;
         console.log(content);
         turn();
-        circle += 180;
+        // 轉圈
+        if (content >= 13 || content <= 0) {
+          circle += 0;
+        } else {
+          circle += 180;
+        }
         console.log(circle);
         $(".extra1").css("transform", `translate(-50%,-50%) rotateY(${circle}deg)`);
       })
@@ -393,7 +396,12 @@
         content--;
         console.log(content);
         turn();
-        circle -= 180;
+        // 轉圈
+        if (content >= 13 || content <= 0) {
+          circle += 0;
+        } else {
+          circle -= 180;
+        }
         console.log(circle);
         $(".extra1").css("transform", `translate(-50%,-50%) rotateY(${circle}deg)`);
       })

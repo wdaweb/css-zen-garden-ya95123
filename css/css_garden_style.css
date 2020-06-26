@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  /* font-family: 'Dancing Script', cursive;; */
+  /* font-family: 'Dancing Script', cursive; */
 }
 
 html,body{
@@ -277,9 +277,20 @@ h3{
 
 /* *footer----------------------------------------------- */
 #footer{
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
+  font-family:'Dancing Script', cursive;
+  font-size: 0.82rem;
+  font-weight: 650;
+  position: absolute;
+  z-index: 1;
+  right: 0.61%;
+  top: 2.252%;
+  display: flex;
+  flex-direction: column;
+}
+
+#footer a{
+  color: rgb(255, 59, 24);
+  margin-top: 0.26rem;
 }
 
 /* *動畫-------------------------------------------------- */
