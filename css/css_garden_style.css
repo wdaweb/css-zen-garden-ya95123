@@ -22,7 +22,7 @@ html,body{
 body{
   width: 100vw;
   height: 100vh;
-  background: #000;
+  background: url(../images/bg.svg);
   overflow: hidden;
   transition: 0.5s;
   /* font-family: 'Dancing Script', cursive; */
@@ -100,6 +100,7 @@ h3{
   top: calc(50%);
   transform: translate(-50%,-50%);
   position: relative;
+  z-index: 5;
   opacity: 0;
   transition: 0.3s;
   /* background: #ccc; */
@@ -126,6 +127,7 @@ h3{
   top: calc(41%);
   transform: translate(-50%,-50%);
   position: relative;
+  z-index: 5;
   opacity: 0;
   transition: 0.3s;
   /* background: #ccc; */
@@ -147,6 +149,34 @@ h3{
 .extra2:hover,.extra3:hover{
   opacity: 1;
   cursor: pointer;
+}
+
+/* !花 */
+.extra4{
+  background: url(../images/flower1.svg);
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  right: -5%;
+  top: -12%;
+  transform: rotate(180deg);
+  opacity: 0;
+  transition: 0.7s;
+}
+
+/* !小恐龍 */
+.extra5{
+  background: url(../images/dino_run.gif) no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  cursor: pointer;
+  display: none;
+  filter: drop-shadow(-3px 3px 0px #124);
+  /* animation: run 25s infinite; */
 }
 
 /* !zen-intro */
@@ -228,11 +258,11 @@ h3{
 }
 
 #design-selection a:nth-child(odd){
-  color: rgb(255, 59, 24);
+  color: rgb(255, 59, 24) !important;
 }
 
 #design-selection a:nth-child(even){
-  color: rgb(26, 94, 241);
+  color: rgb(26, 94, 241) !important;
 }
 
 /* *design-archives (12)-------------------------------------- */
@@ -253,7 +283,7 @@ h3{
 
 #design-archives a:last-child{
   margin-left: 0.3rem;
-  color: rgb(26, 94, 241);
+  color: rgb(26, 94, 241) !important;
 }
 
 /* *zen-resources (13)-------------------------------------- */
@@ -272,13 +302,13 @@ h3{
 
 #zen-resources a{
   margin-left: 0.3rem;
-  color: rgb(255, 59, 24);
+  color: rgb(255, 59, 24) !important;
 }
 
 /* *footer----------------------------------------------- */
 #footer{
   font-family:'Dancing Script', cursive;
-  font-size: 0.82rem;
+  font-size: 1rem;
   font-weight: 650;
   position: absolute;
   z-index: 1;
@@ -289,8 +319,12 @@ h3{
 }
 
 #footer a{
-  color: rgb(255, 59, 24);
-  margin-top: 0.26rem;
+  color: rgb(255, 59, 24) !important;
+  margin-top: 0.32rem;
+}
+
+#footer a:hover{
+  border-bottom: 0.04rem solid #423415;
 }
 
 /* *動畫-------------------------------------------------- */
@@ -300,5 +334,22 @@ h3{
   }
   100%{
     filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes run{
+  0%{
+    left: -10%;
+  }
+  49%{
+    left: 110%;
+    transform: translateX(-110%);
+  }
+  50%{
+    transform: rotateY(-180deg);
+  }
+  100%{
+    left: -10%;
+    transform: rotateY(-180deg);
   }
 }

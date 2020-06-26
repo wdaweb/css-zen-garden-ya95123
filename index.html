@@ -278,7 +278,9 @@
   <div class="extra2" role="presentation"></div>
   <!-- 左鍵 -->
   <div class="extra3" role="presentation"></div>
+  <!-- 花 -->
   <div class="extra4" role="presentation"></div>
+  <!-- 小恐龍 -->
   <div class="extra5" role="presentation"></div>
   <div class="extra6" role="presentation"></div>
 
@@ -368,6 +370,19 @@
           $("#zen-summary,#zen-preamble,#zen-explanation,#zen-participation,#zen-benefits,#zen-requirements,#contentinfo,#design-selection,#design-archives").css("display", "none");
           $("#zen-resources").css("display", "block");
           content = 13;
+
+          // 換背景 標題 h3 a footer 花 小恐龍
+          $("body").css({ "background": "url(../images/bg_white.svg)" });
+          //  h3
+          $("h3").css("color", "#ffc74e")
+          // a
+          $("a").css("color", "#111")
+          // footer
+          $("#footer").css("top", "40%");
+          // 花
+          $(".extra4").css("opacity", "1");
+          // 小恐龍
+          $(".extra5").css({ "display": "block", "animation": "run 25s infinite" });
         } else if (content <= 0) {
           // #zen-summary
           $("#zen-preamble,#zen-explanation,#zen-participation,#zen-benefits,#zen-requirements,#contentinfo,#design-selection,#design-archives,#zen-resources").css("display", "none");
@@ -406,6 +421,21 @@
         $(".extra1").css("transform", `translate(-50%,-50%) rotateY(${circle}deg)`);
       })
 
+      // 點擊小恐龍 切背景
+      $(".extra5").click(function () {
+        // 換背景 標題 h3 a footer 花 小恐龍
+        $("body").css({ "background": "url(../images/bg.svg)" });
+        //  h3
+        $("h3").css("color", "#ddd")
+        // a
+        $("a").css("color", "rgb(255, 255, 255)")
+        // footer
+        $("#footer").css("top", "2.252%");
+        // 花
+        $(".extra4").css("opacity", "0");
+        // 小恐龍
+        // $(".extra5").css({ "display": "block", "animation": "run 25s infinite" });
+      })
     })
 
   </script>
